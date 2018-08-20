@@ -217,9 +217,9 @@
             // 
             this.radPanel2.Controls.Add(this.dgvAddVehicle);
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.radPanel2.Location = new System.Drawing.Point(3, 371);
+            this.radPanel2.Location = new System.Drawing.Point(3, 325);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(1383, 317);
+            this.radPanel2.Size = new System.Drawing.Size(1383, 363);
             this.radPanel2.TabIndex = 15;
             // 
             // dgvAddVehicle
@@ -238,7 +238,7 @@
             this.dgvAddVehicle.MasterTemplate.EnableSorting = false;
             this.dgvAddVehicle.Name = "dgvAddVehicle";
             this.dgvAddVehicle.ReadOnly = true;
-            this.dgvAddVehicle.Size = new System.Drawing.Size(1383, 317);
+            this.dgvAddVehicle.Size = new System.Drawing.Size(1383, 363);
             this.dgvAddVehicle.TabIndex = 0;
             this.dgvAddVehicle.Text = "radGridView1";
             // 
@@ -271,7 +271,7 @@
             this.panelAddvehicle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAddvehicle.Location = new System.Drawing.Point(3, 3);
             this.panelAddvehicle.Name = "panelAddvehicle";
-            this.panelAddvehicle.Size = new System.Drawing.Size(1383, 369);
+            this.panelAddvehicle.Size = new System.Drawing.Size(1383, 306);
             this.panelAddvehicle.TabIndex = 14;
             // 
             // radLabel19
@@ -292,7 +292,7 @@
             // 
             // btnAddVehicle
             // 
-            this.btnAddVehicle.Location = new System.Drawing.Point(686, 281);
+            this.btnAddVehicle.Location = new System.Drawing.Point(687, 268);
             this.btnAddVehicle.Name = "btnAddVehicle";
             this.btnAddVehicle.Size = new System.Drawing.Size(174, 35);
             this.btnAddVehicle.TabIndex = 22;

@@ -30,6 +30,7 @@
         {
             this.btncustomersreport = new System.Windows.Forms.Button();
             this.btnVehicleReports = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // btncustomersreport
@@ -56,11 +57,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1038, 673);
             this.Controls.Add(this.btnVehicleReports);
             this.Controls.Add(this.btncustomersreport);
             this.Name = "_FrmReports";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.Text = "Reports";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
         }

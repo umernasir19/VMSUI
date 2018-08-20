@@ -33,11 +33,23 @@ namespace VMSUI
             comboboxdataInitialize();
             hiddingcolumns();
             hiddingandsettingcolumns();
+            panelsetting();
+
+
         }
         #endregion
+
+        #region panel hiding
+        public void panelsetting()
+        {
+            panelAddvehicle.PanelElement.PanelBorder.Visibility = ElementVisibility.Collapsed;
+            radPanel1.PanelElement.PanelBorder.Visibility = ElementVisibility.Collapsed;
+        }
+
+        #endregion
         #region hiding columns
-        
-     
+
+
         #endregion
         #region form events 
 

@@ -45,6 +45,44 @@ namespace VMSUI
             comboBoxCategory.DataSource = VehicelCategoryBusiness.getVehicleCatmakmodel("VehicleCategory");
             comboBoxCategory.DisplayMember = "Name";
             comboBoxCategory.ValueMember = "VehicleCategoryId";
+
+
+
+            try
+            {
+                VehicleMaker maker = new VehicleMaker()
+                {
+                    VehicleCategoryId = Convert.ToInt32(comboBoxCategory.SelectedValue.ToString())
+                };
+                comboBoxMaker.DataSource = new RateCardBusiness().getMakerFromCategory(maker);
+                comboBoxMaker.DisplayMember = "Maker";
+                comboBoxMaker.ValueMember = "VehicleMakerID";
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            try
+            {
+                VehicleModel model = new VehicleModel()
+                {
+                    vehicle_maker_id = Convert.ToInt32(comboBoxMaker.SelectedValue.ToString())
+                };
+                comboBoxModel.DataSource = new RateCardBusiness().getModelFromMaker(model);
+                comboBoxModel.DisplayMember = "Model";
+                comboBoxModel.ValueMember = "VehicleModelID";
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+
+
+
+
+
         }
         #endregion
         public void dgvinitialize()

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace VMSUI
 {
-    public partial class _FrmReports : Form
+    public partial class _FrmReports : Telerik.WinControls.UI.RadForm
     {
         public _FrmReports()
         {

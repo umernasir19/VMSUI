@@ -57,6 +57,13 @@ namespace VMSUI
             dgvAddCustomrs.Columns["CustomerId"].IsVisible = false;
             dgvAddCustomrs.Columns["CustomerTypeID"].IsVisible = false;
             dgvAddCustomrs.Columns["Name"].IsVisible = false;
+            dgvAddCustomrs.Columns["Gender"].IsVisible = false;
+            dgvAddCustomrs.Columns["DoB"].IsVisible = false;
+            dgvAddCustomrs.Columns["Remarks"].IsVisible = false;
+            dgvAddCustomrs.Columns["RefrenceId"].IsVisible = false;
+            dgvAddCustomrs.Columns["EmailAddress"].IsVisible = false;
+            dgvAddCustomrs.Columns["Createdon"].IsVisible = false;
+
             dgvAddCustomrs.Columns["DoB"].HeaderText = "Date OF Birth";
             dgvAddCustomrs.Columns["IsCar"].HeaderText = "Car";
             dgvAddCustomrs.Columns["IsBike"].HeaderText = "Bike";
@@ -69,6 +76,12 @@ namespace VMSUI
             dgvmanagepage.Columns["CustomerId"].IsVisible = false;
             dgvmanagepage.Columns["CustomerTypeID"].IsVisible = false;
             dgvmanagepage.Columns["Name"].IsVisible = false;
+            dgvmanagepage.Columns["Gender"].IsVisible = false;
+            dgvmanagepage.Columns["DoB"].IsVisible = false;
+            dgvmanagepage.Columns["Remarks"].IsVisible = false;
+            dgvmanagepage.Columns["RefrenceId"].IsVisible = false;
+            dgvmanagepage.Columns["EmailAddress"].IsVisible = false;
+            dgvmanagepage.Columns["Createdon"].IsVisible = false;
 
 
             dgvmangectypes.Columns["CustomerTypeID"].IsVisible = false;
@@ -78,9 +91,8 @@ namespace VMSUI
 
         private void btnAddCustomers_Click(object sender, EventArgs e)
         {
-            if (txtboxcustomername.Text == "" || txtboxprimarycontactnumber.Text == "" || txtboxemail.Text == "" ||
-                txtboxsecondarycontactnumber.Text == "" || txtboxremarks.Text == "" || txtboxrefrence.Text == ""||
-                txtboxemail.Text=="")
+            if (txtboxcustomername.Text == "" || txtboxprimarycontactnumber.Text == ""  ||txtboxcnic.Text==""||txtboxlicensenumber.Text==""||!radRadioButtonFemale.IsChecked&&!radRadioButtonMale.IsChecked
+               )
             {
                 RadMessageBox.Show("Enetr All Fields");
             }

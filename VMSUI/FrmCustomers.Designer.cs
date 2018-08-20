@@ -265,9 +265,9 @@
             // 
             this.panelcustomersbottom.Controls.Add(this.dgvAddCustomrs);
             this.panelcustomersbottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelcustomersbottom.Location = new System.Drawing.Point(3, 338);
+            this.panelcustomersbottom.Location = new System.Drawing.Point(3, 343);
             this.panelcustomersbottom.Name = "panelcustomersbottom";
-            this.panelcustomersbottom.Size = new System.Drawing.Size(1383, 386);
+            this.panelcustomersbottom.Size = new System.Drawing.Size(1383, 381);
             this.panelcustomersbottom.TabIndex = 46;
             // 
             // dgvAddCustomrs
@@ -284,7 +284,7 @@
             this.dgvAddCustomrs.MasterTemplate.EnableFiltering = true;
             this.dgvAddCustomrs.Name = "dgvAddCustomrs";
             this.dgvAddCustomrs.ReadOnly = true;
-            this.dgvAddCustomrs.Size = new System.Drawing.Size(1383, 386);
+            this.dgvAddCustomrs.Size = new System.Drawing.Size(1383, 381);
             this.dgvAddCustomrs.TabIndex = 1;
             this.dgvAddCustomrs.Text = "radGridView1";
             // 
@@ -530,9 +530,9 @@
             // 
             this.panelmanagepagebottom.Controls.Add(this.dgvmanagepage);
             this.panelmanagepagebottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelmanagepagebottom.Location = new System.Drawing.Point(3, 333);
+            this.panelmanagepagebottom.Location = new System.Drawing.Point(3, 287);
             this.panelmanagepagebottom.Name = "panelmanagepagebottom";
-            this.panelmanagepagebottom.Size = new System.Drawing.Size(1383, 391);
+            this.panelmanagepagebottom.Size = new System.Drawing.Size(1383, 437);
             this.panelmanagepagebottom.TabIndex = 78;
             // 
             // dgvmanagepage
@@ -550,7 +550,7 @@
             this.dgvmanagepage.MasterTemplate.EnableFiltering = true;
             this.dgvmanagepage.Name = "dgvmanagepage";
             this.dgvmanagepage.ReadOnly = true;
-            this.dgvmanagepage.Size = new System.Drawing.Size(1383, 391);
+            this.dgvmanagepage.Size = new System.Drawing.Size(1383, 437);
             this.dgvmanagepage.TabIndex = 17;
             this.dgvmanagepage.Text = "radGridView1";
             this.dgvmanagepage.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.dgvmanagepage_CellDoubleClick);
@@ -558,7 +558,7 @@
             // txtboxid
             // 
             this.txtboxid.AcceptsReturn = true;
-            this.txtboxid.Location = new System.Drawing.Point(191, 311);
+            this.txtboxid.Location = new System.Drawing.Point(451, 257);
             this.txtboxid.Name = "txtboxid";
             this.txtboxid.Size = new System.Drawing.Size(100, 24);
             this.txtboxid.TabIndex = 77;
@@ -569,7 +569,7 @@
             // btndelete
             // 
             this.btndelete.Enabled = false;
-            this.btndelete.Location = new System.Drawing.Point(1021, 292);
+            this.btndelete.Location = new System.Drawing.Point(1020, 257);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(174, 35);
             this.btndelete.TabIndex = 76;
@@ -579,7 +579,7 @@
             // radiobuttonupdatevehiclebike
             // 
             this.radiobuttonupdatevehiclebike.BackColor = System.Drawing.Color.White;
-            this.radiobuttonupdatevehiclebike.Location = new System.Drawing.Point(951, 21);
+            this.radiobuttonupdatevehiclebike.Location = new System.Drawing.Point(950, 2);
             this.radiobuttonupdatevehiclebike.Name = "radiobuttonupdatevehiclebike";
             this.radiobuttonupdatevehiclebike.Size = new System.Drawing.Size(110, 20);
             this.radiobuttonupdatevehiclebike.TabIndex = 75;
@@ -588,7 +588,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(8, 27);
+            this.label18.Location = new System.Drawing.Point(7, 8);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(45, 19);
             this.label18.TabIndex = 51;
@@ -597,7 +597,7 @@
             // radiobuttonupdatevehiclecar
             // 
             this.radiobuttonupdatevehiclecar.BackColor = System.Drawing.Color.White;
-            this.radiobuttonupdatevehiclecar.Location = new System.Drawing.Point(785, 22);
+            this.radiobuttonupdatevehiclecar.Location = new System.Drawing.Point(784, 3);
             this.radiobuttonupdatevehiclecar.Name = "radiobuttonupdatevehiclecar";
             this.radiobuttonupdatevehiclecar.Size = new System.Drawing.Size(110, 19);
             this.radiobuttonupdatevehiclecar.TabIndex = 74;
@@ -606,7 +606,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Enabled = false;
-            this.btnUpdate.Location = new System.Drawing.Point(785, 292);
+            this.btnUpdate.Location = new System.Drawing.Point(784, 257);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(174, 35);
             this.btnUpdate.TabIndex = 22;
@@ -615,7 +615,7 @@
             // 
             // txtboxupdateremarks
             // 
-            this.txtboxupdateremarks.Location = new System.Drawing.Point(785, 193);
+            this.txtboxupdateremarks.Location = new System.Drawing.Point(784, 174);
             this.txtboxupdateremarks.Name = "txtboxupdateremarks";
             this.txtboxupdateremarks.Size = new System.Drawing.Size(232, 24);
             this.txtboxupdateremarks.TabIndex = 72;
@@ -624,7 +624,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(8, 71);
+            this.label17.Location = new System.Drawing.Point(7, 52);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(101, 19);
             this.label17.TabIndex = 52;
@@ -632,7 +632,7 @@
             // 
             // txtboxupdaterefrence
             // 
-            this.txtboxupdaterefrence.Location = new System.Drawing.Point(785, 228);
+            this.txtboxupdaterefrence.Location = new System.Drawing.Point(784, 209);
             this.txtboxupdaterefrence.Name = "txtboxupdaterefrence";
             this.txtboxupdaterefrence.Size = new System.Drawing.Size(232, 24);
             this.txtboxupdaterefrence.TabIndex = 71;
@@ -641,7 +641,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(8, 255);
+            this.label16.Location = new System.Drawing.Point(7, 236);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(54, 19);
             this.label16.TabIndex = 53;
@@ -649,7 +649,7 @@
             // 
             // txtboxupdateemail
             // 
-            this.txtboxupdateemail.Location = new System.Drawing.Point(785, 158);
+            this.txtboxupdateemail.Location = new System.Drawing.Point(784, 139);
             this.txtboxupdateemail.Name = "txtboxupdateemail";
             this.txtboxupdateemail.Size = new System.Drawing.Size(232, 24);
             this.txtboxupdateemail.TabIndex = 70;
@@ -658,7 +658,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(8, 110);
+            this.label15.Location = new System.Drawing.Point(7, 91);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(90, 19);
             this.label15.TabIndex = 54;
@@ -666,7 +666,7 @@
             // 
             // txtboxupdatesecondarycontactnumber
             // 
-            this.txtboxupdatesecondarycontactnumber.Location = new System.Drawing.Point(785, 116);
+            this.txtboxupdatesecondarycontactnumber.Location = new System.Drawing.Point(784, 97);
             this.txtboxupdatesecondarycontactnumber.Name = "txtboxupdatesecondarycontactnumber";
             this.txtboxupdatesecondarycontactnumber.Size = new System.Drawing.Size(232, 24);
             this.txtboxupdatesecondarycontactnumber.TabIndex = 69;
@@ -676,7 +676,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(8, 156);
+            this.label14.Location = new System.Drawing.Point(7, 137);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(60, 19);
             this.label14.TabIndex = 55;
@@ -684,7 +684,7 @@
             // 
             // txtboxupdateprimarycontactnumber
             // 
-            this.txtboxupdateprimarycontactnumber.Location = new System.Drawing.Point(785, 66);
+            this.txtboxupdateprimarycontactnumber.Location = new System.Drawing.Point(784, 47);
             this.txtboxupdateprimarycontactnumber.Name = "txtboxupdateprimarycontactnumber";
             this.txtboxupdateprimarycontactnumber.Size = new System.Drawing.Size(232, 24);
             this.txtboxupdateprimarycontactnumber.TabIndex = 73;
@@ -694,7 +694,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(8, 200);
+            this.label13.Location = new System.Drawing.Point(7, 181);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(103, 19);
             this.label13.TabIndex = 56;
@@ -703,7 +703,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(545, 228);
+            this.label19.Location = new System.Drawing.Point(544, 209);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(61, 19);
             this.label19.TabIndex = 68;
@@ -711,7 +711,7 @@
             // 
             // txtboxupdatename
             // 
-            this.txtboxupdatename.Location = new System.Drawing.Point(191, 22);
+            this.txtboxupdatename.Location = new System.Drawing.Point(190, 3);
             this.txtboxupdatename.Name = "txtboxupdatename";
             this.txtboxupdatename.Size = new System.Drawing.Size(232, 24);
             this.txtboxupdatename.TabIndex = 57;
@@ -720,7 +720,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(545, 193);
+            this.label20.Location = new System.Drawing.Point(544, 174);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(61, 19);
             this.label20.TabIndex = 67;
@@ -730,7 +730,7 @@
             // 
             this.cmbboxupdatecustomertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbboxupdatecustomertype.FormattingEnabled = true;
-            this.cmbboxupdatecustomertype.Location = new System.Drawing.Point(191, 66);
+            this.cmbboxupdatecustomertype.Location = new System.Drawing.Point(190, 47);
             this.cmbboxupdatecustomertype.Name = "cmbboxupdatecustomertype";
             this.cmbboxupdatecustomertype.Size = new System.Drawing.Size(232, 24);
             this.cmbboxupdatecustomertype.TabIndex = 59;
@@ -738,7 +738,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(545, 158);
+            this.label21.Location = new System.Drawing.Point(544, 139);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(41, 19);
             this.label21.TabIndex = 66;
@@ -748,7 +748,7 @@
             // 
             this.datetimeupdatedob.Culture = new System.Globalization.CultureInfo("en-PK");
             this.datetimeupdatedob.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.datetimeupdatedob.Location = new System.Drawing.Point(191, 110);
+            this.datetimeupdatedob.Location = new System.Drawing.Point(190, 91);
             this.datetimeupdatedob.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datetimeupdatedob.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datetimeupdatedob.Name = "datetimeupdatedob";
@@ -762,7 +762,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(545, 116);
+            this.label22.Location = new System.Drawing.Point(544, 97);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(178, 19);
             this.label22.TabIndex = 65;
@@ -770,7 +770,7 @@
             // 
             // txtboxupdatecnic
             // 
-            this.txtboxupdatecnic.Location = new System.Drawing.Point(191, 156);
+            this.txtboxupdatecnic.Location = new System.Drawing.Point(190, 137);
             this.txtboxupdatecnic.Name = "txtboxupdatecnic";
             this.txtboxupdatecnic.Size = new System.Drawing.Size(232, 24);
             this.txtboxupdatecnic.TabIndex = 61;
@@ -779,7 +779,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(545, 66);
+            this.label23.Location = new System.Drawing.Point(544, 47);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(162, 19);
             this.label23.TabIndex = 64;
@@ -787,7 +787,7 @@
             // 
             // txtboxupdatelicencenumber
             // 
-            this.txtboxupdatelicencenumber.Location = new System.Drawing.Point(191, 200);
+            this.txtboxupdatelicencenumber.Location = new System.Drawing.Point(190, 181);
             this.txtboxupdatelicencenumber.Name = "txtboxupdatelicencenumber";
             this.txtboxupdatelicencenumber.Size = new System.Drawing.Size(232, 24);
             this.txtboxupdatelicencenumber.TabIndex = 58;
@@ -796,7 +796,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(545, 22);
+            this.label24.Location = new System.Drawing.Point(544, 3);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(51, 19);
             this.label24.TabIndex = 63;
@@ -806,7 +806,7 @@
             // 
             this.grpboxupdategender.Controls.Add(this.radiobuttonupdatefemale);
             this.grpboxupdategender.Controls.Add(this.radiobuttonupdatemale);
-            this.grpboxupdategender.Location = new System.Drawing.Point(191, 242);
+            this.grpboxupdategender.Location = new System.Drawing.Point(190, 223);
             this.grpboxupdategender.Name = "grpboxupdategender";
             this.grpboxupdategender.Size = new System.Drawing.Size(232, 47);
             this.grpboxupdategender.TabIndex = 62;

@@ -1,0 +1,4 @@
+D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\BOL\bin\Debug\BOL.dll
+D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\BOL\bin\Debug\BOL.pdb
+D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\BOL\obj\Debug\BOL.dll
+D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\BOL\obj\Debug\BOL.pdb

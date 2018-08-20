@@ -1,0 +1,7 @@
+D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\DAL\bin\Debug\DAL.dll
+D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\DAL\bin\Debug\DAL.pdb
+D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\DAL\bin\Debug\BOL.dll
+D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\DAL\bin\Debug\BOL.pdb
+D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\DAL\obj\Debug\DAL.dll
+D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\DAL\obj\Debug\DAL.pdb

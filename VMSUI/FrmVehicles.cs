@@ -137,70 +137,51 @@ namespace VMSUI
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(txtboxupdateenginenumber.Text.ToString()==""||
-                txtboxmileageupdate.Text.ToString()==""||
-                txtboxupdatecc.Text.ToString() == "" ||
-                txtboxupdatechessisnumber.Text.ToString()==""||
-                txtboxupdatecolor.Text.ToString() == "" ||
-                txtboxupdatemodelyear.Text.ToString() == "" ||
-                txtboxupdateregistrationyear.Text.ToString() == "" ||
-                txtboxupdatenumberplate.Text.ToString() == "")
+            try
             {
-                RadMessageBox.Show("Enetr ALL Fields");
-            }
-            Vehicles vehicle = new Vehicles
-            {
-                Vehicle_ID = Id,
-                VehiclCategoryId = Convert.ToInt32(cmboboxupdateCategory.SelectedValue.ToString()),
-                MakeID = Convert.ToInt32(cmboboxupdatemaker.SelectedValue.ToString()),
-                ModelId = Convert.ToInt32(comboboxupdatemodel.SelectedValue.ToString()),
-                Mileage = Convert.ToDecimal(txtboxmileageupdate.Text.ToString()),
-                enginenumber = (txtboxupdateenginenumber.Text.ToString()),
-                chessisnumber = (txtboxupdatechessisnumber.Text.ToString()),
-                cc = txtboxupdatecc.Text.ToString(),
-                colour = txtboxupdatecolor.Text.ToString(),
-                modelyear = txtboxupdatemodelyear.Text.ToString(),
-                registrationyear = Convert.ToInt32(txtboxupdateregistrationyear.Text.ToString()),
-                numberplate=txtboxupdatenumberplate.Text.ToString()
-                
-            };
-            if (vehicleBusiness.updateVehicle(vehicle))
-            {
-                RadMessageBox.Show("Updated");
-                btnUpdate.Enabled = false;
-                btnDelete.Enabled = false;
-
-
-                txtboxupdateenginenumber.Clear();
-                txtboxmileageupdate.Clear();
-                txtboxupdatecc.Clear();
-                txtboxupdatechessisnumber.Clear();
-                txtboxupdatecolor.Clear();
-                txtboxupdatemodelyear.Clear();
-                txtboxupdateregistrationyear.Clear();
-                txtboxupdatenumberplate.Clear();
-
-                dgvmanagepage.DataSource = VehicelCategoryBusiness.getVehicleCatmakmodel("allVehicles");
-            }
-            else
-            {
-                RadMessageBox.Show("Failed");
-                //}
-            }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            Vehicles vehicle = new Vehicles { Vehicle_ID = Id };
-            var confirm = RadMessageBox.Show("Are You Sure You want to Delete?", "Confirmation", MessageBoxButtons.YesNo);
-            if (confirm == DialogResult.Yes)
-            {
-
-                if (vehicleBusiness.deleteVehicle(vehicle))
+                if (txtboxupdateenginenumber.Text.ToString() == "" ||
+                    txtboxmileageupdate.Text.ToString() == "" ||
+                    txtboxupdatecc.Text.ToString() == "" ||
+                    txtboxupdatechessisnumber.Text.ToString() == "" ||
+                    txtboxupdatecolor.Text.ToString() == "" ||
+                    txtboxupdatemodelyear.Text.ToString() == "" ||
+                    txtboxupdateregistrationyear.Text.ToString() == "" ||
+                    txtboxupdatenumberplate.Text.ToString() == "")
                 {
-                    RadMessageBox.Show("Deleted");
+                    RadMessageBox.Show("Enetr ALL Fields");
+                }
+                Vehicles vehicle = new Vehicles
+                {
+                    Vehicle_ID = Id,
+                    VehiclCategoryId = Convert.ToInt32(cmboboxupdateCategory.SelectedValue.ToString()),
+                    MakeID = Convert.ToInt32(cmboboxupdatemaker.SelectedValue.ToString()),
+                    ModelId = Convert.ToInt32(comboboxupdatemodel.SelectedValue.ToString()),
+                    Mileage = Convert.ToDecimal(txtboxmileageupdate.Text.ToString()),
+                    enginenumber = (txtboxupdateenginenumber.Text.ToString()),
+                    chessisnumber = (txtboxupdatechessisnumber.Text.ToString()),
+                    cc = txtboxupdatecc.Text.ToString(),
+                    colour = txtboxupdatecolor.Text.ToString(),
+                    modelyear = txtboxupdatemodelyear.Text.ToString(),
+                    registrationyear = Convert.ToInt32(txtboxupdateregistrationyear.Text.ToString()),
+                    numberplate = txtboxupdatenumberplate.Text.ToString()
+
+                };
+                if (vehicleBusiness.updateVehicle(vehicle))
+                {
+                    RadMessageBox.Show("Updated");
                     btnUpdate.Enabled = false;
                     btnDelete.Enabled = false;
+
+
+                    txtboxupdateenginenumber.Clear();
+                    txtboxmileageupdate.Clear();
+                    txtboxupdatecc.Clear();
+                    txtboxupdatechessisnumber.Clear();
+                    txtboxupdatecolor.Clear();
+                    txtboxupdatemodelyear.Clear();
+                    txtboxupdateregistrationyear.Clear();
+                    txtboxupdatenumberplate.Clear();
+
                     dgvmanagepage.DataSource = VehicelCategoryBusiness.getVehicleCatmakmodel("allVehicles");
                 }
                 else
@@ -209,7 +190,37 @@ namespace VMSUI
                     //}
                 }
             }
-            else
+            catch(Exception exception) { }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Vehicles vehicle = new Vehicles { Vehicle_ID = Id };
+                var confirm = RadMessageBox.Show("Are You Sure You want to Delete?", "Confirmation", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+
+                    if (vehicleBusiness.deleteVehicle(vehicle))
+                    {
+                        RadMessageBox.Show("Deleted");
+                        btnUpdate.Enabled = false;
+                        btnDelete.Enabled = false;
+                        dgvmanagepage.DataSource = VehicelCategoryBusiness.getVehicleCatmakmodel("allVehicles");
+                    }
+                    else
+                    {
+                        RadMessageBox.Show("Failed");
+                        //}
+                    }
+                }
+                else
+                {
+
+                }
+            }
+            catch(Exception exception)
             {
 
             }
@@ -250,45 +261,23 @@ namespace VMSUI
 
         private void btnupdatecategorydetails_Click(object sender, EventArgs e)
         {
-            if (txtboxdetailcategory.Text.ToString() == "")
-            {
-                RadMessageBox.Show("Enter Required Fields");
-                return;
-            }
-            VehicleCategory vehicleCategory = new VehicleCategory()
-            {
-                VehicleCategoryId = Convert.ToInt32(txtboxcatid.Text.ToString()),
-                Name = txtboxdetailcategory.Text.ToString()
-            };
-            if (new VehicelCategoryBusiness().UpdateVehicleCategory(vehicleCategory))
-            {
-                RadMessageBox.Show("updated");
-                txtboxdetailcategory.Clear();
-                btnupdatecategorydetails.Enabled = false;
-                btndltcategorydetails.Enabled = false;
-                comboboxdataInitialize();
 
-            }
-            else
+            try
             {
-                RadMessageBox.Show("Failed");
-            }
-        }
-
-        private void btndltcategorydetails_Click(object sender, EventArgs e)
-        {
-            VehicleCategory vehicleCategory = new VehicleCategory()
-            {
-                VehicleCategoryId = Convert.ToInt32(txtboxcatid.Text.ToString()),
-
-            };
-            var confirm = RadMessageBox.Show("Are You Sure You want to Delete?", "Confirmation", MessageBoxButtons.YesNo);
-            if (confirm == DialogResult.Yes)
-            {
-
-                if (new VehicelCategoryBusiness().DeleteVehicleCategory(vehicleCategory))
+                if (txtboxdetailcategory.Text.ToString() == "")
                 {
-                    RadMessageBox.Show("Deleted");
+                    RadMessageBox.Show("Enter Required Fields");
+                    return;
+                }
+                VehicleCategory vehicleCategory = new VehicleCategory()
+                {
+                    VehicleCategoryId = Convert.ToInt32(txtboxcatid.Text.ToString()),
+                    Name = txtboxdetailcategory.Text.ToString()
+                };
+                if (new VehicelCategoryBusiness().UpdateVehicleCategory(vehicleCategory))
+                {
+                    RadMessageBox.Show("updated");
+                    txtboxdetailcategory.Clear();
                     btnupdatecategorydetails.Enabled = false;
                     btndltcategorydetails.Enabled = false;
                     comboboxdataInitialize();
@@ -299,10 +288,41 @@ namespace VMSUI
                     RadMessageBox.Show("Failed");
                 }
             }
-            else
+            catch(Exception exception)
             {
 
             }
+        }
+
+        private void btndltcategorydetails_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                VehicleCategory vehicleCategory = new VehicleCategory()
+                {
+                    VehicleCategoryId = Convert.ToInt32(txtboxcatid.Text.ToString()),
+
+                };
+                var confirm = RadMessageBox.Show("Are You Sure You want to Delete?", "Confirmation", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+
+                    if (new VehicelCategoryBusiness().DeleteVehicleCategory(vehicleCategory))
+                    {
+                        RadMessageBox.Show("Deleted");
+                        btnupdatecategorydetails.Enabled = false;
+                        btndltcategorydetails.Enabled = false;
+                        comboboxdataInitialize();
+
+                    }
+                    else
+                    {
+                        RadMessageBox.Show("Failed");
+                    }
+                }
+            }
+            catch(Exception exception) { }
+           
         }
 
         private void dgvvehiclecategory_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
@@ -352,47 +372,23 @@ namespace VMSUI
 
         private void btnupdatemakerdetails_Click(object sender, EventArgs e)
         {
-            if (txtboxdetailmaker.Text.ToString() == "")
+            try
             {
-                RadMessageBox.Show("Enter All Values");
-                return;
-            }
-            VehicleMaker vehicleMaker = new VehicleMaker()
-            {
-                VehicleMakerID = Convert.ToInt32(txtboxcatid.Text.ToString()),
-                Name = txtboxdetailmaker.Text.ToString(),
-                VehicleCategoryId=Convert.ToInt32(comboboxcategorydetail.SelectedValue.ToString())
-            };
-            if (new VehicleMakerBusiness().UpdateVehicleMaker(vehicleMaker))
-            {
-                RadMessageBox.Show("updated");
-                txtboxdetailmaker.Clear();
-                btnupdatemakerdetails.Enabled = false;
-                btndltmakerdetails.Enabled = false;
-                comboboxdataInitialize();
-
-            }
-            else
-            {
-                RadMessageBox.Show("Failed");
-            }
-        }
-
-        private void btndltmakerdetails_Click(object sender, EventArgs e)
-        {
-
-            VehicleMaker vehicleMaker = new VehicleMaker()
-            {
-                VehicleMakerID = Convert.ToInt32(txtboxcatid.Text.ToString()),
-
-            };
-            var confirm = RadMessageBox.Show("Are You Sure You want to Delete?", "Confirmation", MessageBoxButtons.YesNo);
-            if (confirm == DialogResult.Yes)
-            {
-
-                if (new VehicleMakerBusiness().DeleteVehicleMaker(vehicleMaker))
+                if (txtboxdetailmaker.Text.ToString() == "")
+                {
+                    RadMessageBox.Show("Enter All Values");
+                    return;
+                }
+                VehicleMaker vehicleMaker = new VehicleMaker()
+                {
+                    VehicleMakerID = Convert.ToInt32(txtboxcatid.Text.ToString()),
+                    Name = txtboxdetailmaker.Text.ToString(),
+                    VehicleCategoryId = Convert.ToInt32(comboboxcategorydetail.SelectedValue.ToString())
+                };
+                if (new VehicleMakerBusiness().UpdateVehicleMaker(vehicleMaker))
                 {
                     RadMessageBox.Show("updated");
+                    txtboxdetailmaker.Clear();
                     btnupdatemakerdetails.Enabled = false;
                     btndltmakerdetails.Enabled = false;
                     comboboxdataInitialize();
@@ -403,7 +399,45 @@ namespace VMSUI
                     RadMessageBox.Show("Failed");
                 }
             }
-            else
+            catch(Exception exception)
+            {
+
+            }
+        }
+
+        private void btndltmakerdetails_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                VehicleMaker vehicleMaker = new VehicleMaker()
+                {
+                    VehicleMakerID = Convert.ToInt32(txtboxcatid.Text.ToString()),
+
+                };
+                var confirm = RadMessageBox.Show("Are You Sure You want to Delete?", "Confirmation", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+
+                    if (new VehicleMakerBusiness().DeleteVehicleMaker(vehicleMaker))
+                    {
+                        RadMessageBox.Show("updated");
+                        btnupdatemakerdetails.Enabled = false;
+                        btndltmakerdetails.Enabled = false;
+                        comboboxdataInitialize();
+
+                    }
+                    else
+                    {
+                        RadMessageBox.Show("Failed");
+                    }
+                }
+                else
+                {
+
+                }
+            }
+            catch(Exception exception)
             {
 
             }
@@ -471,41 +505,18 @@ namespace VMSUI
                 RadMessageBox.Show("Enter All Values");
                 return;
             }
-            VehicleModel vehicleModel = new VehicleModel()
+            try
             {
-                VehicelModelId = Convert.ToInt32(txtboxcatid.Text.ToString()),
-                Name = txtboxdetailmodel.Text.ToString(),
-                vehicle_maker_id=Convert.ToInt32(comboboxdetailmaker.SelectedValue.ToString())
-            };
-            if (new VehicleModelBusiness().UpdateVehicleModel(vehicleModel))
-            {
-                RadMessageBox.Show("updated");
-                txtboxdetailmodel.Clear();
-                btnupdatemodeldetails.Enabled = false;
-                btndltmodeldetails.Enabled = false;
-                comboboxdataInitialize();
-
-            }
-            else
-            {
-                RadMessageBox.Show("Failed");
-            }
-        }
-
-        private void btndltmodeldetails_Click(object sender, EventArgs e)
-        {
-            VehicleModel vehicleModel = new VehicleModel()
-            {
-                VehicelModelId = Convert.ToInt32(txtboxcatid.Text.ToString())
-
-            };
-            var confirm = RadMessageBox.Show("Are You Sure You want to Delete?", "Confirmation", MessageBoxButtons.YesNo);
-            if (confirm == DialogResult.Yes)
-            {
-
-                if (new VehicleModelBusiness().DeleteVehicleModel(vehicleModel))
+                VehicleModel vehicleModel = new VehicleModel()
+                {
+                    VehicelModelId = Convert.ToInt32(txtboxcatid.Text.ToString()),
+                    Name = txtboxdetailmodel.Text.ToString(),
+                    vehicle_maker_id = Convert.ToInt32(comboboxdetailmaker.SelectedValue.ToString())
+                };
+                if (new VehicleModelBusiness().UpdateVehicleModel(vehicleModel))
                 {
                     RadMessageBox.Show("updated");
+                    txtboxdetailmodel.Clear();
                     btnupdatemodeldetails.Enabled = false;
                     btndltmodeldetails.Enabled = false;
                     comboboxdataInitialize();
@@ -516,8 +527,41 @@ namespace VMSUI
                     RadMessageBox.Show("Failed");
                 }
             }
-            else
+            catch(Exception exception)
             {
+
+            }
+        }
+
+        private void btndltmodeldetails_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                VehicleModel vehicleModel = new VehicleModel()
+                {
+                    VehicelModelId = Convert.ToInt32(txtboxcatid.Text.ToString())
+
+                };
+                var confirm = RadMessageBox.Show("Are You Sure You want to Delete?", "Confirmation", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+
+                    if (new VehicleModelBusiness().DeleteVehicleModel(vehicleModel))
+                    {
+                        RadMessageBox.Show("updated");
+                        btnupdatemodeldetails.Enabled = false;
+                        btndltmodeldetails.Enabled = false;
+                        txtboxdetailmodel.Clear();
+                        comboboxdataInitialize();
+
+                    }
+                    else
+                    {
+                        RadMessageBox.Show("Failed");
+                    }
+                }
+            }
+            catch (Exception exception) {
 
             }
         }

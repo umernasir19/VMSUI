@@ -34,8 +34,13 @@ namespace VMSUI
         {
             dgvcustomersearch.Columns["CustomerId"].IsVisible = false;
             dgvcustomersearch.Columns["CustomerTypeId"].IsVisible = false;
-           dgvcustomersearch.Columns["Costumer Name"].IsVisible = false;
-
+            dgvcustomersearch.Columns["Costumer Name"].IsVisible = false;
+            dgvcustomersearch.Columns["Gender"].IsVisible = false;
+            dgvcustomersearch.Columns["DoB"].IsVisible = false;
+            dgvcustomersearch.Columns["Remarks"].IsVisible = false;
+            dgvcustomersearch.Columns["RefrenceId"].IsVisible = false;
+            dgvcustomersearch.Columns["EmailAddress"].IsVisible = false;
+            dgvcustomersearch.Columns["Createdon"].IsVisible = false;
 
             dgvcustomersearch.Columns["DoB"].HeaderText = "Date Of Birth";
             dgvcustomersearch.Columns["IsCar"].HeaderText = "Car";
@@ -66,13 +71,20 @@ namespace VMSUI
         Bitmap bmp;
         private void dgvcustomersearch_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
-            int id=Convert.ToInt32(dgvcustomersearch.Rows[e.RowIndex].Cells["CustomerId"].Value.ToString());
-            Customers customers = new Customers()
+            try
             {
-                CostumersId = id
-            };
-            FrmCustomersByName frmCustomersByName = new FrmCustomersByName(customers);
-            frmCustomersByName.Show();
+                int id = Convert.ToInt32(dgvcustomersearch.Rows[e.RowIndex].Cells["CustomerId"].Value.ToString());
+                Customers customers = new Customers()
+                {
+                    CostumersId = id
+                };
+                FrmCustomersByName frmCustomersByName = new FrmCustomersByName(customers);
+                frmCustomersByName.Show();
+            }
+            catch(Exception exception)
+            {
+
+            }
             //int height = dgvcustomersearch.Height;
             //dgvcustomersearch.Height = dgvcustomersearch.Height * dgvcustomersearch.Height * 2;
             //bmp = new Bitmap(dgvcustomersearch.Width, dgvcustomersearch.Height);

@@ -31,6 +31,7 @@ namespace VMSUI.Reporting
                 this.gettheCostumersbynameTableAdapter.Fill(this.vehilceSystem.GettheCostumersbyname, id);
 
                 this.reportViewer1.RefreshReport();
+              
                 this.reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
                 this.reportViewer1.ZoomMode = ZoomMode.Percent;
                 reportViewer1.ZoomPercent = 100;

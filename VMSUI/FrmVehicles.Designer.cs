@@ -231,11 +231,9 @@
             // dgvAddVehicle
             // 
             this.dgvAddVehicle.MasterTemplate.AllowAddNewRow = false;
-            this.dgvAddVehicle.MasterTemplate.AllowRowReorder = true;
+            this.dgvAddVehicle.MasterTemplate.AllowColumnReorder = false;
             this.dgvAddVehicle.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.dgvAddVehicle.MasterTemplate.EnableFiltering = true;
-            this.dgvAddVehicle.MasterTemplate.EnableGrouping = false;
-            this.dgvAddVehicle.MasterTemplate.EnableSorting = false;
             this.dgvAddVehicle.Name = "dgvAddVehicle";
             this.dgvAddVehicle.ReadOnly = true;
             this.dgvAddVehicle.Size = new System.Drawing.Size(1383, 363);
@@ -503,6 +501,7 @@
             this.dgvmanagepage.MasterTemplate.AllowDeleteRow = false;
             this.dgvmanagepage.MasterTemplate.AllowEditRow = false;
             this.dgvmanagepage.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.dgvmanagepage.MasterTemplate.EnableFiltering = true;
             this.dgvmanagepage.Name = "dgvmanagepage";
             this.dgvmanagepage.ReadOnly = true;
             this.dgvmanagepage.Size = new System.Drawing.Size(1383, 318);
@@ -784,6 +783,7 @@
             this.dgvvehiclecategory.MasterTemplate.AllowDeleteRow = false;
             this.dgvvehiclecategory.MasterTemplate.AllowEditRow = false;
             this.dgvvehiclecategory.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.dgvvehiclecategory.MasterTemplate.EnableFiltering = true;
             this.dgvvehiclecategory.Name = "dgvvehiclecategory";
             this.dgvvehiclecategory.ReadOnly = true;
             this.dgvvehiclecategory.Size = new System.Drawing.Size(423, 396);
@@ -802,6 +802,7 @@
             this.dgvvehiclemaker.MasterTemplate.AllowAddNewRow = false;
             this.dgvvehiclemaker.MasterTemplate.AllowEditRow = false;
             this.dgvvehiclemaker.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.dgvvehiclemaker.MasterTemplate.EnableFiltering = true;
             this.dgvvehiclemaker.Name = "dgvvehiclemaker";
             this.dgvvehiclemaker.ReadOnly = true;
             this.dgvvehiclemaker.Size = new System.Drawing.Size(461, 396);
@@ -822,6 +823,7 @@
             this.dgvvehiclemodel.MasterTemplate.AllowDeleteRow = false;
             this.dgvvehiclemodel.MasterTemplate.AllowEditRow = false;
             this.dgvvehiclemodel.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.dgvvehiclemodel.MasterTemplate.EnableFiltering = true;
             this.dgvvehiclemodel.Name = "dgvvehiclemodel";
             this.dgvvehiclemodel.ReadOnly = true;
             this.dgvvehiclemodel.Size = new System.Drawing.Size(499, 396);

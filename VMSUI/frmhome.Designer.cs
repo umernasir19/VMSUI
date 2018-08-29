@@ -32,6 +32,7 @@
             this.btnvehicle = new System.Windows.Forms.Button();
             this.btnreports = new System.Windows.Forms.Button();
             this.btnRatecard = new System.Windows.Forms.Button();
+            this.btnbooking = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,11 +76,22 @@
             this.btnRatecard.UseVisualStyleBackColor = true;
             this.btnRatecard.Click += new System.EventHandler(this.btnRatecard_Click);
             // 
+            // btnbooking
+            // 
+            this.btnbooking.Location = new System.Drawing.Point(642, 298);
+            this.btnbooking.Name = "btnbooking";
+            this.btnbooking.Size = new System.Drawing.Size(190, 127);
+            this.btnbooking.TabIndex = 4;
+            this.btnbooking.Text = "Booking";
+            this.btnbooking.UseVisualStyleBackColor = true;
+            this.btnbooking.Click += new System.EventHandler(this.btnbooking_Click);
+            // 
             // frmhome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 520);
+            this.ClientSize = new System.Drawing.Size(1012, 520);
+            this.Controls.Add(this.btnbooking);
             this.Controls.Add(this.btnRatecard);
             this.Controls.Add(this.btnreports);
             this.Controls.Add(this.btnvehicle);
@@ -102,5 +114,6 @@
         private System.Windows.Forms.Button btnvehicle;
         private System.Windows.Forms.Button btnreports;
         private System.Windows.Forms.Button btnRatecard;
+        private System.Windows.Forms.Button btnbooking;
     }
 }

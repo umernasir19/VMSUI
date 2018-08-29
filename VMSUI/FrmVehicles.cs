@@ -34,8 +34,6 @@ namespace VMSUI
             hiddingcolumns();
             hiddingandsettingcolumns();
             panelsetting();
-
-
         }
         #endregion
 
@@ -699,11 +697,19 @@ namespace VMSUI
             dgvAddVehicle.Columns["ModelId"].IsVisible = false;
             dgvAddVehicle.Columns["VehiclCategoryId"].IsVisible = false;
             dgvAddVehicle.Columns["Vehicle_ID"].IsVisible = false;
+            dgvAddVehicle.Columns["Mileage"].IsVisible = false;
+            dgvAddVehicle.Columns["colour"].IsVisible = false;
+            dgvAddVehicle.Columns["cc"].IsVisible = false;
+            dgvAddVehicle.Columns["registrationyear"].IsVisible = false;
+
+
             dgvAddVehicle.Columns["enginenumber"].HeaderText = "Engine Number";
             dgvAddVehicle.Columns["chessisnumber"].HeaderText = "Chessis Number";
             dgvAddVehicle.Columns["registrationyear"].HeaderText = "Registration Year";
             dgvAddVehicle.Columns["modelyear"].HeaderText = "Model Year";
             dgvAddVehicle.Columns["numberplate"].HeaderText = "Number Plate";
+            dgvAddVehicle.Columns["createdon"].FormatString = "{0:MM/dd/yyyy}";
+            
             //add vehicle columns hiding and setting header text end
 
 
@@ -714,10 +720,17 @@ namespace VMSUI
             dgvmanagepage.Columns["registrationyear"].HeaderText = "Registration Year";
             dgvmanagepage.Columns["modelyear"].HeaderText = "Model Year";
             dgvmanagepage.Columns["numberplate"].HeaderText = "Number Plate";
+
+
+            dgvmanagepage.Columns["Mileage"].IsVisible = false;
+            dgvmanagepage.Columns["colour"].IsVisible = false;
+            dgvmanagepage.Columns["cc"].IsVisible = false;
+            dgvmanagepage.Columns["registrationyear"].IsVisible = false;
             dgvmanagepage.Columns["MakeID"].IsVisible = false;
             dgvmanagepage.Columns["ModelId"].IsVisible = false;
             dgvmanagepage.Columns["VehiclCategoryId"].IsVisible = false;
             dgvmanagepage.Columns["Vehicle_ID"].IsVisible = false;
+            dgvmanagepage.Columns["createdon"].FormatString = "{0:MM/dd/yyyy}";
 
             //manage vehicle columns hiding and setting header text end
         }

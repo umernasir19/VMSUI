@@ -96,6 +96,10 @@ namespace VMSUI
             dgvratecard.Columns["VehicleCategoryId"].IsVisible = false;
             dgvratecard.Columns["VehicleMakerID"].IsVisible = false;
             dgvratecard.Columns["VehicleModelID"].IsVisible = false;
+            dgvratecard.Columns["starttime"].IsVisible = false;
+            dgvratecard.Columns["endtime"].IsVisible = false;
+            dgvratecard.Columns["BaseRate"].IsVisible = false;
+
 
             dgvratecard.Columns["rate_card_name"].HeaderText = "Rate Card Name";
             dgvratecard.Columns["IsAcctive"].HeaderText = "Status";

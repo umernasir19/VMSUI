@@ -72,6 +72,7 @@
             // 
             // radPanel1
             // 
+            this.radPanel1.BackColor = System.Drawing.Color.White;
             this.radPanel1.Controls.Add(this.dtto);
             this.radPanel1.Controls.Add(this.label2);
             this.radPanel1.Controls.Add(this.btnloadReport);

@@ -50,9 +50,9 @@
             // 
             this.vehclereportpanel.Controls.Add(this.dgvvhclereports);
             this.vehclereportpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.vehclereportpanel.Location = new System.Drawing.Point(0, 153);
+            this.vehclereportpanel.Location = new System.Drawing.Point(0, 119);
             this.vehclereportpanel.Name = "vehclereportpanel";
-            this.vehclereportpanel.Size = new System.Drawing.Size(1173, 798);
+            this.vehclereportpanel.Size = new System.Drawing.Size(1173, 832);
             this.vehclereportpanel.TabIndex = 0;
             // 
             // dgvvhclereports
@@ -70,7 +70,7 @@
             this.dgvvhclereports.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.dgvvhclereports.MasterTemplate.EnableFiltering = true;
             this.dgvvhclereports.Name = "dgvvhclereports";
-            this.dgvvhclereports.Size = new System.Drawing.Size(1173, 798);
+            this.dgvvhclereports.Size = new System.Drawing.Size(1173, 832);
             this.dgvvhclereports.TabIndex = 1;
             this.dgvvhclereports.Text = "radGridView1";
             this.dgvvhclereports.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.dgvvhclereports_CellDoubleClick);
@@ -142,6 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1173, 951);
             this.Controls.Add(this.btngetallvehiclereport);
             this.Controls.Add(this.btnGeneratereport);

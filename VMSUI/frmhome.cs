@@ -46,5 +46,11 @@ namespace VMSUI
             FrmRateCard rateCard = new FrmRateCard();
             rateCard.Show();
         }
+
+        private void btnbooking_Click(object sender, EventArgs e)
+        {
+            FrmBooking booking = new FrmBooking();
+            booking.Show();
+        }
     }
 }

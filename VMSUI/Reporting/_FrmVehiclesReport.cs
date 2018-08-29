@@ -29,6 +29,12 @@ namespace VMSUI
             dgvvhclereports.Columns["VehiclCategoryId"].IsVisible = false;
             dgvvhclereports.Columns["Vehicle_Id"].IsVisible = false;
 
+            dgvvhclereports.Columns["createdon"].FormatString = "{0:MM/dd/yyyy}";
+            dgvvhclereports.Columns["Mileage"].IsVisible = false;
+            dgvvhclereports.Columns["colour"].IsVisible = false;
+            dgvvhclereports.Columns["cc"].IsVisible = false;
+            dgvvhclereports.Columns["registrationyear"].IsVisible = false;
+
         }
         public void comboboxdataInitialize()
         {

@@ -590,9 +590,9 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(7, 8);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(45, 19);
+            this.label18.Size = new System.Drawing.Size(51, 19);
             this.label18.TabIndex = 51;
-            this.label18.Text = "Name";
+            this.label18.Text = "Name*";
             // 
             // radiobuttonupdatevehiclecar
             // 
@@ -626,9 +626,9 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(7, 52);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(101, 19);
+            this.label17.Size = new System.Drawing.Size(107, 19);
             this.label17.TabIndex = 52;
-            this.label17.Text = "Customer Type";
+            this.label17.Text = "Customer Type*";
             // 
             // txtboxupdaterefrence
             // 
@@ -643,9 +643,9 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(7, 236);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(54, 19);
+            this.label16.Size = new System.Drawing.Size(60, 19);
             this.label16.TabIndex = 53;
-            this.label16.Text = "Gender";
+            this.label16.Text = "Gender*";
             // 
             // txtboxupdateemail
             // 
@@ -660,9 +660,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(7, 91);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(90, 19);
+            this.label15.Size = new System.Drawing.Size(96, 19);
             this.label15.TabIndex = 54;
-            this.label15.Text = "Date Of Birth";
+            this.label15.Text = "Date Of Birth*";
             // 
             // txtboxupdatesecondarycontactnumber
             // 
@@ -678,9 +678,9 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(7, 137);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(60, 19);
+            this.label14.Size = new System.Drawing.Size(66, 19);
             this.label14.TabIndex = 55;
-            this.label14.Text = "Cnic No:";
+            this.label14.Text = "Cnic No:*";
             // 
             // txtboxupdateprimarycontactnumber
             // 
@@ -696,9 +696,9 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(7, 181);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(103, 19);
+            this.label13.Size = new System.Drawing.Size(109, 19);
             this.label13.TabIndex = 56;
-            this.label13.Text = "LicenseNumber";
+            this.label13.Text = "LicenseNumber*";
             // 
             // label19
             // 
@@ -781,9 +781,9 @@
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(544, 47);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(162, 19);
+            this.label23.Size = new System.Drawing.Size(168, 19);
             this.label23.TabIndex = 64;
-            this.label23.Text = "Primary Contact Number";
+            this.label23.Text = "Primary Contact Number*";
             // 
             // txtboxupdatelicencenumber
             // 

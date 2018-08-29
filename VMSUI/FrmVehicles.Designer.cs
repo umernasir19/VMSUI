@@ -406,6 +406,7 @@
             this.comboboxvehiclecategory.Name = "comboboxvehiclecategory";
             this.comboboxvehiclecategory.Size = new System.Drawing.Size(205, 24);
             this.comboboxvehiclecategory.TabIndex = 3;
+            this.comboboxvehiclecategory.SelectedIndexChanged += new System.EventHandler(this.comboboxvehiclecategory_SelectedIndexChanged);
             // 
             // txtboxEngineNumber
             // 
@@ -423,6 +424,7 @@
             this.comboboxvehiclecMaker.Name = "comboboxvehiclecMaker";
             this.comboboxvehiclecMaker.Size = new System.Drawing.Size(205, 24);
             this.comboboxvehiclecMaker.TabIndex = 4;
+            this.comboboxvehiclecMaker.SelectedIndexChanged += new System.EventHandler(this.comboboxvehiclecMaker_SelectedIndexChanged);
             // 
             // radLabel3
             // 

@@ -11,6 +11,7 @@ using BOL;
 using BLL.VehiclesBusiness;
 using BLL;
 using Telerik.WinControls;
+using BLL.RateCardBusiness;
 
 namespace VMSUI
 {
@@ -310,6 +311,7 @@ namespace VMSUI
                     if (new VehicelCategoryBusiness().DeleteVehicleCategory(vehicleCategory))
                     {
                         RadMessageBox.Show("Deleted");
+                        txtboxdetailcategory.Clear();
                         btnupdatecategorydetails.Enabled = false;
                         btndltcategorydetails.Enabled = false;
                         comboboxdataInitialize();
@@ -422,6 +424,7 @@ namespace VMSUI
                     if (new VehicleMakerBusiness().DeleteVehicleMaker(vehicleMaker))
                     {
                         RadMessageBox.Show("updated");
+                        txtboxdetailmaker.Clear();
                         btnupdatemakerdetails.Enabled = false;
                         btndltmakerdetails.Enabled = false;
                         comboboxdataInitialize();
@@ -820,7 +823,43 @@ namespace VMSUI
 
 
         #endregion
-      
+
+        private void comboboxvehiclecategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                VehicleMaker maker = new VehicleMaker()
+                {
+                    VehicleCategoryId = Convert.ToInt32(comboboxvehiclecategory.SelectedValue.ToString())
+                };
+                comboboxvehiclecMaker.DataSource = new RateCardBusiness().getMakerFromCategory(maker);
+                comboboxvehiclecMaker.DisplayMember = "Maker";
+                comboboxvehiclecMaker.ValueMember = "VehicleMakerID";
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void comboboxvehiclecMaker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                VehicleModel model = new VehicleModel()
+                {
+                    vehicle_maker_id = Convert.ToInt32(comboboxvehiclecMaker.SelectedValue.ToString())
+                };
+                comboboxvehicleModel.DataSource = new RateCardBusiness().getModelFromMaker(model);
+                comboboxvehicleModel.DisplayMember = "Model";
+                comboboxvehicleModel.ValueMember = "VehicleModelID";
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }
 

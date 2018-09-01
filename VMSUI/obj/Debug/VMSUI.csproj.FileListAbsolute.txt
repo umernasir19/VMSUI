@@ -81,3 +81,4 @@ D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\VMSUI\bin\Debug\de\DevExpress.Pdf.
 D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\VMSUI\bin\Debug\es\DevExpress.Pdf.v17.2.Core.resources.dll
 D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\VMSUI\bin\Debug\ja\DevExpress.Pdf.v17.2.Core.resources.dll
 D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\VMSUI\bin\Debug\ru\DevExpress.Pdf.v17.2.Core.resources.dll
+D:\Dot Net Projects (Office)\VMS\Code\1\VMSUI\VMSUI\obj\Debug\VMSUI.Reporting.FrmBookingReport.resources

@@ -400,6 +400,7 @@
             this.dgvBookings.Size = new System.Drawing.Size(1312, 353);
             this.dgvBookings.TabIndex = 2;
             this.dgvBookings.Text = "radGridView1";
+            this.dgvBookings.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.dgvBookings_CommandCellClick);
             // 
             // label9
             // 

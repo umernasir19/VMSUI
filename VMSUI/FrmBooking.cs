@@ -10,13 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 
 namespace VMSUI
 {
     public partial class FrmBooking : Telerik.WinControls.UI.RadForm
     {
         #region variables
-        double baserate, dailyrate, weeklyrate, monthlyrate;
+        private double baserate, dailyrate, weeklyrate, monthlyrate;
         #endregion
 
 
@@ -113,6 +114,14 @@ namespace VMSUI
 
             dgvBookings.Columns["rate_card_name"].HeaderText = "Applied Rate Card";
 
+
+            
+           GridViewCommandColumn bcol = new GridViewCommandColumn();
+            bcol.HeaderText = "Report";
+            bcol.UseDefaultText = true;
+            bcol.DefaultText = "Get Report";
+            bcol.Name = "report";
+            dgvBookings.MasterTemplate.Columns.Add(bcol);
         }
         #endregion
 
@@ -188,6 +197,13 @@ namespace VMSUI
 
         }
 
+        private void dgvBookings_CommandCellClick(object sender, EventArgs e)
+        {
+            GridCommandCellElement cell = (GridCommandCellElement)sender;
+            int value = (int)cell.RowInfo.Cells["Booking_Id"].Value;
+            MessageBox.Show(value.ToString());
+        }
+
         private void dgvbookingvehicle_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
             try
@@ -223,13 +239,12 @@ namespace VMSUI
             }
 
         }
-        #endregion
 
         private void cmboboxduration_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmboboxduration.SelectedItem.ToString() == "Daily")
             {
-                txtboxtotalrate.Text =Convert.ToString( baserate + dailyrate);
+                txtboxtotalrate.Text = Convert.ToString(baserate + dailyrate);
             }
             else if (cmboboxduration.SelectedItem.ToString() == "Weekly")
             {
@@ -240,5 +255,6 @@ namespace VMSUI
                 txtboxtotalrate.Text = Convert.ToString(baserate + monthlyrate);
             }
         }
+        #endregion
     }
 }

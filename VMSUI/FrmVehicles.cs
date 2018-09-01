@@ -12,6 +12,8 @@ using BLL.VehiclesBusiness;
 using BLL;
 using Telerik.WinControls;
 using BLL.RateCardBusiness;
+using System.Diagnostics;
+using System.IO;
 
 namespace VMSUI
 {
@@ -23,6 +25,7 @@ namespace VMSUI
         #endregion
         #region fields
         int Id;
+        string logpath = AppDomain.CurrentDomain.BaseDirectory+"Log File.txt";
 
         #endregion
 
@@ -56,7 +59,7 @@ namespace VMSUI
         //add vehicle page add button starts
         private void btnAddVehicle_Click(object sender, EventArgs e)
         {
-            if(txtboxMileage.Text.ToString()==""||
+            if (txtboxMileage.Text.ToString() == "" ||
                 txtboxEngineNumber.Text.ToString() == "" ||
                 txtboxChessisNumber.Text.ToString() == "" ||
                 txtboxcc.Text.ToString() == "" ||
@@ -74,13 +77,13 @@ namespace VMSUI
                 MakeID = Convert.ToInt32(comboboxvehiclecMaker.SelectedValue.ToString()),
                 ModelId = Convert.ToInt32(comboboxvehicleModel.SelectedValue.ToString()),
                 Mileage = Convert.ToDecimal(txtboxMileage.Text.ToString()), // 
-                enginenumber =txtboxEngineNumber.Text.ToString(), // nvarchar
+                enginenumber = txtboxEngineNumber.Text.ToString(), // nvarchar
                 chessisnumber = txtboxChessisNumber.Text.ToString(), // nvarchar
                 cc = txtboxcc.Text.ToString(), //nvarchar
                 colour = txtboxColour.Text.ToString(),
-                modelyear =txtboxyear.Text.ToString(), // nvarchar
+                modelyear = txtboxyear.Text.ToString(), // nvarchar
                 registrationyear = Convert.ToInt32(txtboxregistrationyear.Text.ToString()),
-                numberplate=txtboxnumberplate.Text.ToString()
+                numberplate = txtboxnumberplate.Text.ToString()
 
             };
             if (vehicleBusiness.addVehicle(vehicle))
@@ -95,7 +98,7 @@ namespace VMSUI
                 txtboxregistrationyear.Clear();
                 txtboxnumberplate.Clear();
                 comboboxdataInitialize();
-               // dgvAddVehicle.DataSource = VehicelCategoryBusiness.getVehicleCatmakmodel("allVehicles");
+                // dgvAddVehicle.DataSource = VehicelCategoryBusiness.getVehicleCatmakmodel("allVehicles");
             }
             else
             {
@@ -147,9 +150,11 @@ namespace VMSUI
                     txtboxupdatecolor.Text.ToString() == "" ||
                     txtboxupdatemodelyear.Text.ToString() == "" ||
                     txtboxupdateregistrationyear.Text.ToString() == "" ||
-                    txtboxupdatenumberplate.Text.ToString() == "")
+                    txtboxupdatenumberplate.Text.ToString() == ""||
+                    Id==null)
                 {
-                    RadMessageBox.Show("Enetr ALL Fields");
+                    RadMessageBox.Show("Please Select a row And Enter ALL Fields");
+                    return;
                 }
                 Vehicles vehicle = new Vehicles
                 {
@@ -191,7 +196,14 @@ namespace VMSUI
                     //}
                 }
             }
-            catch(Exception exception) { }
+            catch (Exception exception) {
+                RadMessageBox.Show("Failed Some Error Occured");
+                using (EventLog eventLog = new EventLog("VMSUI"))
+                {
+                    eventLog.Source = "VMSUI";
+                    eventLog.WriteEntry(" Message : " + exception.Message, EventLogEntryType.Information);
+                }
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -221,7 +233,7 @@ namespace VMSUI
 
                 }
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
 
             }
@@ -235,31 +247,56 @@ namespace VMSUI
 
         //manage vehicle detail page starts
 
-            //category work
+        //category work
+
+            //add vehicle category button work
         private void btnaddcategoryname_Click(object sender, EventArgs e)
         {
-            if (txtboxdetailcategory.Text.ToString() == "")
+            try
             {
-                RadMessageBox.Show("Enter Required Fields");
-                return;
-            }
-            VehicleCategory vehicleCategory = new VehicleCategory()
-            {
-                Name = txtboxdetailcategory.Text.ToString()
-            };
-            if (new VehicelCategoryBusiness().AddVehicleCategory(vehicleCategory))
-            {
-                RadMessageBox.Show("Added");
-                txtboxdetailcategory.Clear();
-                comboboxdataInitialize();
+                if (txtboxdetailcategory.Text.ToString() == "")
+                {
+                    RadMessageBox.Show("Enter Required Fields");
+                    return;
+                }
+                VehicleCategory vehicleCategory = new VehicleCategory()
+                {
+                    Name = txtboxdetailcategory.Text.ToString().ToUpper()
+                };
+                if (new VehicelCategoryBusiness().AddVehicleCategory(vehicleCategory))
+                {
+                    RadMessageBox.Show("Added");
+                    txtboxdetailcategory.Clear();
+                    comboboxdataInitialize();
 
+                }
+                else
+                {
+                    RadMessageBox.Show("Failed");
+                }
             }
-            else
+            catch(Exception exception)
             {
-                RadMessageBox.Show("Failed");
+                if (!File.Exists(logpath))
+                {
+                    File.Create(logpath).Dispose();
+                    using(TextWriter textWriter=new StreamWriter(logpath))
+                    {
+                        textWriter.WriteLine("Add Vehicle Category Error:" + exception.Message);
+                    }
+                }
+                else if(File.Exists(logpath))
+                {
+                    using (TextWriter textWriter = new StreamWriter(logpath))
+                    {
+                        textWriter.WriteLine("Add Vehicle Category Error:" + exception.Message);
+                    }
+                }
             }
         }
 
+
+        // update category button work
         private void btnupdatecategorydetails_Click(object sender, EventArgs e)
         {
 
@@ -270,10 +307,15 @@ namespace VMSUI
                     RadMessageBox.Show("Enter Required Fields");
                     return;
                 }
+                else if (txtboxcatid.Text.ToString() == "")
+                {
+                    RadMessageBox.Show("Please Select the Cell with Data");
+                    return;
+                }
                 VehicleCategory vehicleCategory = new VehicleCategory()
                 {
                     VehicleCategoryId = Convert.ToInt32(txtboxcatid.Text.ToString()),
-                    Name = txtboxdetailcategory.Text.ToString()
+                    Name = txtboxdetailcategory.Text.ToString().ToUpper()
                 };
                 if (new VehicelCategoryBusiness().UpdateVehicleCategory(vehicleCategory))
                 {
@@ -289,16 +331,36 @@ namespace VMSUI
                     RadMessageBox.Show("Failed");
                 }
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
-
+                if (!File.Exists(logpath))
+                {
+                    File.Create(logpath).Dispose();
+                    using (TextWriter textWriter = new StreamWriter(logpath))
+                    {
+                        textWriter.WriteLine("Update Vehicle Category Error:" + exception.Message);
+                    }
+                }
+                else if (File.Exists(logpath))
+                {
+                    using (TextWriter textWriter = new StreamWriter(logpath))
+                    {
+                        textWriter.WriteLine("Update Vehicle Category Error:" + exception.Message);
+                    }
+                }
             }
         }
 
+        //delete category button works
         private void btndltcategorydetails_Click(object sender, EventArgs e)
         {
             try
             {
+               if (txtboxcatid.Text.ToString() == "")
+                {
+                    RadMessageBox.Show("Please Select the Cell with Data");
+                    return;
+                }
                 VehicleCategory vehicleCategory = new VehicleCategory()
                 {
                     VehicleCategoryId = Convert.ToInt32(txtboxcatid.Text.ToString()),
@@ -323,10 +385,29 @@ namespace VMSUI
                     }
                 }
             }
-            catch(Exception exception) { }
-           
+            catch (Exception exception)
+            {
+
+                if (!File.Exists(logpath))
+                {
+                    File.Create(logpath).Dispose();
+                    using (TextWriter textWriter = new StreamWriter(logpath))
+                    {
+                        textWriter.WriteLine("Delete Vehicle Category Error:" + exception.Message);
+                    }
+                }
+                else if (File.Exists(logpath))
+                {
+                    using (TextWriter textWriter = new StreamWriter(logpath))
+                    {
+                        textWriter.WriteLine("Delete Vehicle Category Error:" + exception.Message);
+                    }
+                }
+            }
+
         }
 
+        //category gridview click work
         private void dgvvehiclecategory_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
             btnupdatecategorydetails.Enabled = true;
@@ -344,9 +425,10 @@ namespace VMSUI
 
         //category work end
 
+//<!-- ---------------------------------------------------------------------------- !>//
+        //maker working code
 
-
-            //maker working code
+            //vehicle Maker 
         private void btnaddMakerName_Click(object sender, EventArgs e)
         {
             if (txtboxdetailmaker.Text.ToString() == "")
@@ -354,9 +436,14 @@ namespace VMSUI
                 RadMessageBox.Show("Enter All Values");
                 return;
             }
+            else if(comboboxcategorydetail.SelectedValue == null)
+            {
+                RadMessageBox.Show("Please Choose Vehicle Category");
+                return;
+            }
             VehicleMaker vehicleMaker = new VehicleMaker()
             {
-                Name = txtboxdetailmaker.Text.ToString(),
+                Name = txtboxdetailmaker.Text.ToString().ToUpper(),
                 VehicleCategoryId=Convert.ToInt32(comboboxcategorydetail.SelectedValue.ToString())
             };
             if (new VehicleMakerBusiness().AddVehicleMaker(vehicleMaker))
@@ -381,10 +468,15 @@ namespace VMSUI
                     RadMessageBox.Show("Enter All Values");
                     return;
                 }
+                else if (comboboxcategorydetail.SelectedValue == null)
+                {
+                    RadMessageBox.Show("Please Choose Vehicle Category");
+                    return;
+                }
                 VehicleMaker vehicleMaker = new VehicleMaker()
                 {
                     VehicleMakerID = Convert.ToInt32(txtboxcatid.Text.ToString()),
-                    Name = txtboxdetailmaker.Text.ToString(),
+                    Name = txtboxdetailmaker.Text.ToString().ToUpper(),
                     VehicleCategoryId = Convert.ToInt32(comboboxcategorydetail.SelectedValue.ToString())
                 };
                 if (new VehicleMakerBusiness().UpdateVehicleMaker(vehicleMaker))
@@ -484,14 +576,20 @@ namespace VMSUI
                 RadMessageBox.Show("Enter All Values");
                 return;
             }
+            else if (comboboxdetailmaker.SelectedValue == null)
+            {
+                RadMessageBox.Show("Please Choose Vehicle Category");
+                return;
+            }
             VehicleModel vehicleModel = new VehicleModel()
             {
-                Name = txtboxdetailmodel.Text.ToString(),
+                Name = txtboxdetailmodel.Text.ToString().ToUpper(),
                 vehicle_maker_id=Convert.ToInt32(comboboxdetailmaker.SelectedValue.ToString())
             };
             if (new VehicleModelBusiness().AddVehicleModel(vehicleModel))
             {
                 RadMessageBox.Show("Added");
+                txtboxdetailmodel.Clear();
                 comboboxdataInitialize();
 
             }
@@ -508,12 +606,17 @@ namespace VMSUI
                 RadMessageBox.Show("Enter All Values");
                 return;
             }
+            else if (comboboxdetailmaker.SelectedValue == null)
+            {
+                RadMessageBox.Show("Please Choose Vehicle Category");
+                return;
+            }
             try
             {
                 VehicleModel vehicleModel = new VehicleModel()
                 {
                     VehicelModelId = Convert.ToInt32(txtboxcatid.Text.ToString()),
-                    Name = txtboxdetailmodel.Text.ToString(),
+                    Name = txtboxdetailmodel.Text.ToString().ToUpper(),
                     vehicle_maker_id = Convert.ToInt32(comboboxdetailmaker.SelectedValue.ToString())
                 };
                 if (new VehicleModelBusiness().UpdateVehicleModel(vehicleModel))

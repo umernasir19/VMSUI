@@ -18,6 +18,7 @@ namespace DAL
         {
         }
 
+        
         public bool AddVehicle(Vehicles vehicle)
         {
             SqlCommand cmd = new SqlCommand();
@@ -40,6 +41,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@colour", vehicle.colour);
                 cmd.Parameters.AddWithValue("@modelyear", vehicle.modelyear);
                 cmd.Parameters.AddWithValue("@numberplate", vehicle.numberplate);
+               
 
                 cmd.ExecuteNonQuery();
                 con.Close();

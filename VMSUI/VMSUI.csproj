@@ -89,6 +89,12 @@
     <Compile Include="FrmRateCard.Designer.cs">
       <DependentUpon>FrmRateCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reporting\FrmBookingReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\FrmBookingReport.Designer.cs">
+      <DependentUpon>FrmBookingReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reporting\FrmCustomersByName.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="ReportCostumersName.rdlc" />
     <EmbeddedResource Include="ReportGetAllVehicles.rdlc" />
+    <EmbeddedResource Include="Reporting\FrmBookingReport.resx">
+      <DependentUpon>FrmBookingReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporting\FrmCustomersByName.resx">
       <DependentUpon>FrmCustomersByName.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +213,7 @@
     <EmbeddedResource Include="RateCardReportsById.rdlc" />
     <EmbeddedResource Include="Reporting\reportCustomersDated.rdlc" />
     <EmbeddedResource Include="Reporting\RptAllCostumers.rdlc" />
+    <EmbeddedResource Include="Reporting\RptBookingById.rdlc" />
     <EmbeddedResource Include="Reporting\VehiclefromtoReport.rdlc" />
     <EmbeddedResource Include="Reporting\_FrmCostumersReport.resx">
       <DependentUpon>_FrmCostumersReport.cs</DependentUpon>

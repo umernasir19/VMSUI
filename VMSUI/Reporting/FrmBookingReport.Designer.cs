@@ -1,0 +1,60 @@
+﻿namespace VMSUI.Reporting
+{
+    partial class FrmBookingReport
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.bookingreport = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.SuspendLayout();
+            // 
+            // bookingreport
+            // 
+            this.bookingreport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bookingreport.Location = new System.Drawing.Point(0, 0);
+            this.bookingreport.Name = "bookingreport";
+            this.bookingreport.Size = new System.Drawing.Size(1017, 639);
+            this.bookingreport.TabIndex = 0;
+            // 
+            // FrmBookingReport
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1017, 639);
+            this.Controls.Add(this.bookingreport);
+            this.Name = "FrmBookingReport";
+            this.Text = "FrmBookingReport";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmBookingReport_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private Microsoft.Reporting.WinForms.ReportViewer bookingreport;
+    }
+}

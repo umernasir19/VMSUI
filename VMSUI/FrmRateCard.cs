@@ -84,11 +84,10 @@ namespace VMSUI
 
 
         }
-        #endregion
         public void dgvinitialize()
         {
             dgvratecard.DataSource = new RateCardBusiness().getRateCards();
-            
+
         }
         public void hiddingandsettingcolumns()
         {
@@ -113,7 +112,9 @@ namespace VMSUI
             dgvratecard.MasterTemplate.Columns.Add(bcol);
         }
 
-        
+
+        #endregion
+
 
         #region Events
         private void FrmRateCard_Load(object sender, EventArgs e)
@@ -138,7 +139,7 @@ namespace VMSUI
 
             }
         }
-        #endregion
+
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -152,7 +153,7 @@ namespace VMSUI
                 comboBoxMaker.DisplayMember = "Maker";
                 comboBoxMaker.ValueMember = "VehicleMakerID";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
             }
@@ -165,7 +166,7 @@ namespace VMSUI
 
         private void btnaddratecard_Click(object sender, EventArgs e)
         {
-            if(comboBoxMaker.SelectedValue==null||comboBoxModel.SelectedValue==null||txtboxbaserate.Text.ToString()==""||
+            if (comboBoxMaker.SelectedValue == null || comboBoxModel.SelectedValue == null || txtboxbaserate.Text.ToString() == "" ||
                 txtBoxDailyRate.Text.ToString() == "" || txtBoxWeeklyRate.Text.ToString() == "" || txtBoxMonthlyRate.Text.ToString() == "" ||
                 txtboxratecardname.Text.ToString() == ""
                 )
@@ -197,10 +198,10 @@ namespace VMSUI
                 StartDate = dtstrtdate.Value,
                 EndDate = dtenddate.Value,
                 IsActive = active,
-                starttime=dtstarttime.Value.ToShortTimeString().ToString(),
-                endtime=dtendtime.Value.ToShortTimeString().ToString()
+                starttime = dtstarttime.Value.ToShortTimeString().ToString(),
+                endtime = dtendtime.Value.ToShortTimeString().ToString()
             };
-            
+
             if (new RateCardBusiness().addRateCard(ratecard))
             {
                 RadMessageBox.Show("Succesfully Added");
@@ -208,7 +209,7 @@ namespace VMSUI
                 lblend.Visible = false;
                 dtstarttime.Visible = false;
                 dtendtime.Visible = false;
-              //  
+                //  
                 dgvinitialize();
             }
             else
@@ -255,16 +256,16 @@ namespace VMSUI
                 MessageBox.Show("Start Date cannot be before today's Date");
                 dtstrtdate.Value = DateTime.Now;
             }
-            
+
         }
 
         private void dgvratecard_CellDoubleClick(object sender, GridViewCellEventArgs e)
         {
-            
+
             //MessageBox.Show(e.ToString());
         }
 
-        
+
 
         private void dgvratecard_CommandCellClick_1(object sender, EventArgs e)
         {
@@ -284,7 +285,7 @@ namespace VMSUI
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            if(dtstarttime.Value.TimeOfDay < DateTime.Now.TimeOfDay)
+            if (dtstarttime.Value.TimeOfDay < DateTime.Now.TimeOfDay)
             {
                 RadMessageBox.Show("Start Time Cannot be less than the current time");
                 dtstarttime.Value = DateTime.Now;
@@ -299,5 +300,8 @@ namespace VMSUI
             //    dtendtime.Value = DateTime.Now;
             //}
         }
+
+        #endregion
+
     }
 }
